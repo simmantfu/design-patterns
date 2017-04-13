@@ -59,14 +59,35 @@ public class BinarySearchTree {
 		}
 	}
 
-	public void searchSmallest(int intitlaValue, int count) {
+	public void searchSmallest(int count) {
 		if(Objects.nonNull(this.left)){
-			this.left.searchSmallest(intitlaValue++, count);
-			if(intitlaValue == count){
+		if(Objects.nonNull(this.left)){
+			
+			if(Main.counter == count){
 				System.out.println(this.left.root);
 			}
+			Main.counter++;
+			this.left.searchSmallest(count);
 		}	
 		
-	
+        if(Objects.nonNull(this.right)){
+        	 if(Objects.nonNull(this.right.left)){
+			if(Main.counter == count){
+				System.out.println(this.right.left.root);
+			}
+			Main.counter++;
+			this.right.left.searchSmallest(count);
+        	 }
+        	 
+        	 if(Objects.nonNull(this.right.right)){
+			if(Main.counter == count){
+				System.out.println(this.right.right.root);
+			}
+			Main.counter++;
+			this.right.right.searchSmallest(count);
+        	 }
+		}
+		
+		}
 	}
 }
