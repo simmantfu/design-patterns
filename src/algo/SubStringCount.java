@@ -1,5 +1,8 @@
 package algo;
 
+
+
+
 public class SubStringCount {
 
 	public static void main(String ar[]) {
@@ -21,6 +24,8 @@ public class SubStringCount {
 
 	}
 
+	
+	
 	public static void checkFirstLast(String str){
 		
 		char[] indexs = str.toCharArray();
